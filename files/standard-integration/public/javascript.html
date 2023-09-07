@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+    <link rel="stylesheet" href="./styles/course-styles.css">
+    <title>Apollo Academy</title>
+</head>
+<body>
+<div class="container">
+    <!--header start-->
+    <header>
+        <a href="index.html" class="logo">Apollo Academy</a>
+        <nav class="navigation">
+            <a href="index.html">Home</a>
+            <a href="#course">Courses</a>
+            <a href="#feedback">Feedbacks</a>
+            <a href="contact.html">Contact Us</a>
+            
+        </nav>
+    </header>
+    <!--header end-->
+
+    <!--main section start-->
+    <section class="main">
+        <h2>JavaScript Course</h2>
+        <p>Enroll in a javascript course to<br> boost your skills and learn how to build interactive interfaces<br> and how to build stunning websites for clients worldwide.</p>
+        <h5>Price : 20$</h5>
+        <!--button-->
+        <img src="./images/3.png" alt="Third Course Logo">
+        <!--button-->
+        <script src="https://www.paypal.com/sdk/js?client-id=AXws-z-ZkmbfG_4ao6V_NQIifas3aFQK3bpZhs1191lcAX7mh40ExNLbHrIAv_QlxWMfhUy66qZ8uedM&currency=USD"></script>
+        <!-- Set up a container element for the button -->
+        <div id="paypal-button-container" style="max-width: 40px;"></div>
+        <script>
+          paypal.Buttons({
+            style: {
+              shape: "rect",
+              color: "blue",
+              disableMaxWidth: true
+            },
+              // Sets up the transaction when a payment button is clicked
+              createOrder: function () {
+                return fetch("/my-server/create-paypal-order", {
+                  method: "post",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  // use the "body" param to optionally pass additional order information
+                  // like product skus and quantities
+                  body: JSON.stringify({
+                    cart: [
+                      {
+                        sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
+                        quantity: "YOUR_PRODUCT_QUANTITY",
+                      },
+                    ],
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((order) => order.id);
+              },
+              // Finalize the transaction after payer approval
+              onApprove: function (data) {
+                return fetch("/my-server/capture-paypal-order", {
+                  method: "post",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    orderID: data.orderID,
+                  }),
+                })
+                  .then((response) => response.json())
+                  .then((orderData) => {
+                    // Successful capture! For dev/demo purposes:
+                    console.log(
+                      "Capture result",
+                      orderData,
+                      JSON.stringify(orderData, null, 2)
+                    );
+                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                    window.location.href = 'js-lesson.html';
+                    //actions.redirect('thank_you.html');
+                    // When ready to go live, remove the alert and show a success message within this page. For example:
+                    // var element = document.getElementById('paypal-button-container');
+                    // 
+                  });
+              },
+            })
+            .render("#paypal-button-container");
+        </script>
+    </section>
+    <!--main section end-->
+
+    <!--info section start-->
+    <section class="info" id="course">
+        <h3>Quick Video</h3>
+        <div class="quick">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Y9Fzv0a9tPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+    <!--info section end-->
+
+    <!--feedback section start-->
+    <section class="feedback" id="feedback">
+        <h3>Feedbacks</h3>
+        <p>In Progress</p>
+    </section>
+    <!--feedback section end-->
+
+    <!--footer section start-->
+    <footer class="footer">
+        <p>© Copyright <a href="https://twitter.com/codewithastro">Aser Ahmed</a> | All Rights Reserved</p>
+    </footer>
+    <!--footer section end-->
+</div>
+    <script src="index.js"></script>
+</body>
+</html>

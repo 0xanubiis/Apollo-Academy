@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+/*main styles start*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Baloo 2', sans-serif;
+    transition: .2s linear;
+    scroll-behavior: smooth;
+}
+/*main styles end*/
+
+/*root colors start*/
+:root{
+    --dark-bg-color: #1F2937;
+    --main-logo-color: #f9faf8;
+    --button-color: #3882f6;
+    --q-color: #e5e7eb;
+    --hover-color: #316fd3;
+    --scroll-color: #131922;
+}
+/*root colors end*/
+
+/*scroll designs start*/
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: var(--scroll-color);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--button-color);
+    border-radius: 20px;
+}
+/*scroll designs end*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 120px;
+    background-color: var(--dark-bg-color);
+}
+
+.logo{
+    font-size: 24px;
+    color: var(--main-logo-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.navigation a{
+    font-size: 20px;;
+    text-decoration: none;
+    color: var(--q-color);
+    padding-left: 30px;
+}
+
+.navigation a:hover{
+    color: var(--hover-color);
+}
+
+/*for Responsive Design*/
+/*#menu-btn{
+    cursor: pointer;
+    color:var(--white);
+    font-size: 2.5rem;
+    display: none;
+}*/
+
+.main{
+    background-color: var(--dark-bg-color);
+    padding: 90px 0px 90px 120px;
+}
+
+.main h2{
+    color:var(--main-logo-color);
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.main p{
+    padding-bottom: 20px;
+    font-size: 18px;
+    color: var(--q-color);
+}
+
+.main-btn{
+    font-size: 18px;
+    color: var(--main-logo-color);
+    text-decoration: none;
+    border-radius: 12px;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+}
+
+.main-btn:hover{
+    background-color: var(--hover-color);
+}
+
+.main img{
+    float: right;
+    margin: -190px 170px 90px 0px;
+    width: 230px;
+    height: 230px;
+    border: 4px solid var(--button-color);
+    border-radius: 12px;
+    box-shadow: 3px 5px 5px black;
+}
+
+.main img:hover{
+    border: 4px solid var(--hover-color);
+}
+
+.main .social-icons{
+    padding-top: 20px;
+}
+
+.main .social-icons a{
+    padding-right: 45px;
+    border-radius: 50%;
+    font-size: 30px;
+    color: var(--main-logo-color);
+}
+
+.main .social-icons a:hover{
+    color: var(--q-color);
+}
+
+.course{
+    background-color: var(--main-logo-color);
+}
+
+.title{
+    text-align: center;
+    padding: 20px 0px 0px;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--dark-bg-color);
+}
+
+.course div{
+    display: flex;
+    padding: 0px 100px 40px;
+    background-color: var(--main-logo-color);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.course div a{
+    background-color: var(--button-color);
+    color: var(--main-logo-color);
+    margin-top: 40px;
+    margin-left: 40px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.course div a:hover {
+    background-color: var(--hover-color);
+}
+
+.feedback{
+    background-color: var(--q-color);
+    padding: 20px 0px;
+}
+
+.feedback h3{
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--dark-bg-color);
+}
+
+.feedback p{
+    display: inline;
+    margin-left: 600px;
+    padding: 10px 20px;
+    background-color: var(--button-color);
+    color: var(--main-logo-color);
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.feedback p:hover{
+    background-color: var(--hover-color);
+}
+
+.footer{
+    text-align: center;
+    background-color: var(--dark-bg-color);
+    padding: 20px 0px;
+}
+.footer p{
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--main-logo-color);
+}
+.footer p a{
+    color: var(--button-color);
+    text-decoration: none;
+
+}
+.footer p a:hover{
+    color: var(--hover-color);
+}
