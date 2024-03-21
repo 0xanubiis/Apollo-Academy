@@ -141,7 +141,7 @@ header{
     color: var(--dark-bg-color);
 }
 
-.course div{
+.lessons div{
     display: flex;
     padding: 0px 100px 40px;
     background-color: var(--main-logo-color);
@@ -149,7 +149,7 @@ header{
     flex-wrap: wrap;
 }
 
-.course div a{
+.lessons div a{
     background-color: var(--button-color);
     color: var(--main-logo-color);
     margin-top: 40px;
@@ -161,7 +161,7 @@ header{
     font-weight: 600;
 }
 
-.course div a:hover {
+.lessons div a:hover {
     background-color: var(--hover-color);
 }
 
